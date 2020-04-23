@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectile : MonoBehaviour {
+public class bulletSoldier : MonoBehaviour
+{
     private Vector3 firingpoint;
+
+    private GameObject target;
+    public float damage;
 
     [SerializeField]
     private float projectileSpeed;
@@ -11,11 +15,13 @@ public class projectile : MonoBehaviour {
     [SerializeField]
     private float maxprojectiledistance;
 
-    void Start () {
+    void Start()
+    {
         firingpoint = transform.position;
-	}
-	
-	void Update () {
+    }
+
+    void Update()
+    {
         moveprojectile();
 
     }
@@ -29,6 +35,16 @@ public class projectile : MonoBehaviour {
         else
         {
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            target = other.gameObject;
+            target.GetComponent<PlayerScript>().health -= damage;
+            Destroy(this.gameObject);
         }
     }
 }

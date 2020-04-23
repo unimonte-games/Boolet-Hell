@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turret : MonoBehaviour
+public class soldierGun : MonoBehaviour
 {
 
     private GameObject target;
     private bool targetlocked;
 
-    public GameObject turretTopPart;
     public GameObject bulletSpawnPoint;
-    public GameObject bullet;
+    public GameObject bulletTurret;
     public float fireTimer;
     private bool shootReady;
 
@@ -25,8 +24,6 @@ public class turret : MonoBehaviour
     {
         if (targetlocked)
         {
-            turretTopPart.transform.LookAt(target.transform);
-            turretTopPart.transform.Rotate (0, 180, 0);
 
             if (shootReady)
             {
@@ -37,7 +34,7 @@ public class turret : MonoBehaviour
 
     void Shoot()
     {
-        Transform _bullet = Instantiate(bullet.transform, bulletSpawnPoint.transform.position, Quaternion.identity);
+        Transform _bullet = Instantiate(bulletTurret.transform, bulletSpawnPoint.transform.position, Quaternion.identity);
         _bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
         shootReady = false;
         StartCoroutine(FireRate());
@@ -58,7 +55,7 @@ public class turret : MonoBehaviour
             else
                 targetlocked = false;
 
-            if(targetlocked == false)
+            if (targetlocked == false)
             {
                 target = other.gameObject;
             }
