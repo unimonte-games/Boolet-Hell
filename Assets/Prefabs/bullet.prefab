@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65051a6c2592bc458133dfff6c8f1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 0
-  maxprojectiledistance: 0
+  projectileSpeed: 10
+  maxprojectiledistance: 40

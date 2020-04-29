@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73c4750a66330c4798cf3b46c584d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
 --- !u!114 &4927786500498445488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa59df66ba467c54c8c341a7132fdeda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movimentSpeed: 0
+  movimentSpeed: 10
 --- !u!1 &5687969931800067210
 GameObject:
   m_ObjectHideFlags: 0
