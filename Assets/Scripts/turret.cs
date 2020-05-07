@@ -51,7 +51,7 @@ public class turret : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Player")
         {
             if (target)
                 targetlocked = true;

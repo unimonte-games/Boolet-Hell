@@ -40,10 +40,16 @@ public class bulletTurret : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Player")
         {
             target = other.gameObject;
-            target.GetComponent<PlayerScript>().health -= damage;
+            target.GetComponent<LifeScript>().health -= damage;
+            Destroy(this.gameObject);
+        }
+
+        if (other.tag == "Object")
+        {
+            target = other.gameObject;
             Destroy(this.gameObject);
         }
     }

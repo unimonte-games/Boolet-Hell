@@ -43,7 +43,7 @@ public class bulletSoldier : MonoBehaviour
         if (other.tag == "Enemy")
         {
             target = other.gameObject;
-            target.GetComponent<PlayerScript>().health -= damage;
+            target.GetComponent<LifeScript>().health -= damage;
             Destroy(this.gameObject);
         }
     }

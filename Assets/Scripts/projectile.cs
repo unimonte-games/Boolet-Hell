@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class projectile : MonoBehaviour {
+
     private Vector3 firingpoint;
+
+    private GameObject target;
+    public float damage;
 
     [SerializeField]
     private float projectileSpeed;
@@ -29,6 +33,22 @@ public class projectile : MonoBehaviour {
         else
         {
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            target = other.gameObject;
+            target.GetComponent<LifeScript>().health -= damage;
+            Destroy(this.gameObject);
+        }
+
+        if (other.tag == "Object")
+        {
+            target = other.gameObject;
+            Destroy(this.gameObject);
         }
     }
 }

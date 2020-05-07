@@ -89,7 +89,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3536570334511502978}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -106,5 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65051a6c2592bc458133dfff6c8f1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 25
   projectileSpeed: 10
   maxprojectiledistance: 40
