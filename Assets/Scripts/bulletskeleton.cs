@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletSoldier : MonoBehaviour
+public class bulletskeleton : MonoBehaviour
 {
     private Vector3 firingpoint;
 
